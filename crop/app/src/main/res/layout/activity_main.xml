@@ -23,6 +23,14 @@
             android:layout_margin="@dimen/fab_margin"
             app:srcCompat="@android:drawable/ic_input_add"/>
 
+        <android.support.design.internal.NavigationMenuItemView
+            android:id="@+id/popup_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/fab_margin"
+            app:menu="@menu/pop_up_menu"/>
+
 		<android.support.design.widget.FloatingActionButton
             android:id="@+id/fab_swap"
             android:layout_width="wrap_content"
@@ -32,7 +40,7 @@
 
 
             app:srcCompat="@android:drawable/ic_menu_rotate" />
-			
+
         <com.example.j.crop.GridBoard.GameBoardView
             android:id="@+id/boardview"
             android:layout_width="wrap_content"
@@ -49,15 +57,17 @@
     </FrameLayout>
     <!-- Container for contents of drawer -->
     <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:menu="@menu/side_drawer"
-        app:headerLayout="@layout/dock_header" >
+    android:id="@+id/nav_view"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:fitsSystemWindows="true"
+    app:menu="@menu/side_drawer"
+    app:headerLayout="@layout/dock_header" >
 
 
-    </android.support.design.widget.NavigationView>
+</android.support.design.widget.NavigationView>
+
+
 
 </android.support.v4.widget.DrawerLayout>

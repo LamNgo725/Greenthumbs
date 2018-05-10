@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/broccoli"
         android:icon="@drawable/broccoli_icon"
@@ -28,14 +29,19 @@
 
     <item
         android:id="@+id/onion"
+        android:title="Onion"
         android:icon="@drawable/onion_icon"
-        android:title="Onion"/>
+        />
 
     <item
         android:id="@+id/pea"
         android:icon="@drawable/peas_icon"
         android:title="Pea"/>
 
+    <item
+        android:id="@+id/dirt"
+        android:icon="@drawable/dirt_icon"
+        android:title="Dirt" />
     <item
         android:id="@+id/potato"
         android:icon="@drawable/potato_icon"
@@ -50,4 +56,5 @@
         android:id="@+id/yellow_flower"
         android:icon="@drawable/yellow_flower_icon"
         android:title="Yellow Flower"/>
+
 </menu>

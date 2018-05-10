@@ -13,12 +13,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.Pair;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.example.j.crop.AboutActivity;
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity
 
     FloatingActionButton fab_swap;
     FloatingActionButton fab_clear;
+    //private PopupMenu pop;
 
     private boolean water_flag = false;
     private boolean edit_flag = false;
@@ -159,7 +162,7 @@ public class MainActivity extends AppCompatActivity
             //gv.setNumSquaresAlongSide(NumSquaresOnViewSide);
 
             gv.setNumSquaresAlongCanvas(dimensions[0]);
-            gv.setNumSquaresAlongSide(dimensions[1]);
+            gv.setNumSquaresAlongSide(dimensions[0] + 2);
             gv.updateGrid(getGrid());
             gv.setTouchListener(this);
         }
@@ -171,6 +174,7 @@ public class MainActivity extends AppCompatActivity
 
         fab_swap = findViewById(R.id.fab_swap);
         fab_clear = findViewById(R.id.fab_clear);
+        //NavigationView pop_navigationView = findViewById(R.id.popup_menu);
 
         fab_swap.setVisibility(View.GONE);
         fab_clear.setVisibility(View.GONE);
@@ -326,6 +330,11 @@ public class MainActivity extends AppCompatActivity
 
 
     }
+
+    /*  PopupMenu popup = new PopupMenu(MainActivity.this, gv, Gravity.CENTER);
+        popup.inflate(R.menu.pop_up_menu);
+        popup.show();
+        gv.setOnTouchListener(popup.getDragToOpenListener());*/
 
     void enterWaterMode()
     {
@@ -560,10 +569,10 @@ public class MainActivity extends AppCompatActivity
             gv.invalidate ();
             return;
         }
-        if (!edit_flag)
+        /*if (!edit_flag)
         {
             return;
-        }
+        }*/
 
         boolean isSelected = gv.isSelected (upX, upY);
         gv.clearSelections ();
@@ -600,18 +609,25 @@ public class MainActivity extends AppCompatActivity
      */
 
     public void onLongTouchUp (int downX, int downY, int upX, int upY) {
-        GameBoardView gv = getGridView ();
-        if (gv == null) return;
+        if(edit_flag)
+        {
+            GameBoardView gv = getGridView ();
+            if (gv == null) return;
+            /*PopupMenu popup = new PopupMenu(MainActivity.this, gv, Gravity.CENTER);
+            popup.inflate(R.menu.pop_up_menu);
+            popup.show();
+            gv.setOnTouchListener(popup.getDragToOpenListener());*/
+            int oldValue = gv.gridValue (upX, upY);
+            int newValue = oldValue + 1;
+            if (newValue >= (NumRedBlueTypes / 2)) newValue = 0;
+            gv.setGridValue (upX, upY, newValue);
+            gv.invalidate ();
 
-        int oldValue = gv.gridValue (upX, upY);
-        int newValue = oldValue + 1;
-        if (newValue >= NumRedBlueTypes) newValue = 0;
-        gv.setGridValue (upX, upY, newValue);
-        gv.invalidate ();
+            if (AppConfig.DEBUG)
+                Log.d (Constants.LOG_NAME, "onLongTouchUp x: " + upX + " y: " + upY + " old value: " + oldValue);
+        }
+        else return;
 
-        if (AppConfig.DEBUG)
-            Log.d (Constants.LOG_NAME, "onLongTouchUp x: " + upX + " y: " + upY + " old value: " + oldValue);
-
-    }
+}
 
 }// end class
