@@ -132,9 +132,9 @@ public class NewPlot extends AppCompatActivity {
                         mDrawerLayout.closeDrawers();
 
                         switch (menuItem.getItemId()) {
-                            case R.id.notes:
+                            /*case R.id.notes:
                                 startActivity(new Intent(NewPlot.this, Note.class));
-                                break;
+                                break;*/
 
                             // case R.id.
                         }

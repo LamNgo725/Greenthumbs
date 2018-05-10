@@ -282,7 +282,7 @@ public class MainActivity extends AppCompatActivity
                         mDrawerLayout.closeDrawers();
 
                         switch (menuItem.getItemId()) {
-                            case R.id.notes:
+                            /*case R.id.notes:
 
                                 if(x == 0 && y == 0) //if no plant was selected, don't start the next activity //TODO DEBUG: IF RANDOM SPOT IS SELECTED, STILL OPENS NOTES
                                 {
@@ -297,7 +297,7 @@ public class MainActivity extends AppCompatActivity
 
                                     startActivity(intent);
                                     break;
-                                }
+                                }*/
                             case R.id.nav_edit_plot:
                                 enterEditMode();
                                 break;
@@ -569,10 +569,22 @@ public class MainActivity extends AppCompatActivity
             gv.invalidate ();
             return;
         }
-        /*if (!edit_flag)
+        if (!edit_flag)
         {
-            return;
-        }*/
+            if(upX == 0 && upY == 0) //if no plant was selected, don't start the next activity //TODO DEBUG: IF RANDOM SPOT IS SELECTED, STILL OPENS NOTES
+            {
+                Toast.makeText(MainActivity.this, "No Plant Selected", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Intent intent = new Intent(MainActivity.this, AddNoteActivity.class);
+
+                intent.putExtra("x", x);
+                intent.putExtra("y", y);
+                intent.putExtra("watered", 0);
+
+                startActivity(intent);
+            }
+        }
 
         boolean isSelected = gv.isSelected (upX, upY);
         gv.clearSelections ();
@@ -626,7 +638,10 @@ public class MainActivity extends AppCompatActivity
             if (AppConfig.DEBUG)
                 Log.d (Constants.LOG_NAME, "onLongTouchUp x: " + upX + " y: " + upY + " old value: " + oldValue);
         }
-        else return;
+        else
+        {
+            return;
+        }
 
 }
 
