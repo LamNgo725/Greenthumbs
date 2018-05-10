@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/broccoli"
+        android:icon="@drawable/broccoli_icon"
+        android:title="Broccoli"
+        />
+
+    <item
+        android:id="@+id/carrot"
+        android:icon="@drawable/carrots_icon"
+        android:title="Carrot"/>
+
+    <item
+        android:id="@+id/cucumber"
+        android:icon="@drawable/cucumber_icon"
+        android:title="Cucumber"/>
+
+    <item
+        android:id="@+id/eggplant"
+        android:icon="@drawable/eggplant_icon"
+        android:title="Eggplant"/>
+
+    <item
+        android:id="@+id/marijuana"
+        android:icon="@drawable/marijuana_icon"
+        android:title="Marijuana"/>
+
+    <item
+        android:id="@+id/onion"
+        android:icon="@drawable/onion_icon"
+        android:title="Onion"/>
+
+    <item
+        android:id="@+id/pea"
+        android:icon="@drawable/peas_icon"
+        android:title="Pea"/>
+
+    <item
+        android:id="@+id/potato"
+        android:icon="@drawable/potato_icon"
+        android:title="Potato"/>
+
+    <item
+        android:id="@+id/red_flower"
+        android:icon="@drawable/red_flower_icon"
+        android:title="Red Flower"/>
+
+    <item
+        android:id="@+id/yellow_flower"
+        android:icon="@drawable/yellow_flower_icon"
+        android:title="Yellow Flower"/>
+</menu>
