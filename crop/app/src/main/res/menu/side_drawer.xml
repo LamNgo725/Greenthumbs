@@ -8,19 +8,18 @@
             android:title="@string/import" />-->
         <item
             android:id="@+id/notes"
-            android:title="notes" />
+            android:title="Notes" />
+        <!--
         <item
             android:id="@+id/nav_plot_two"
             android:title="@string/plot_two" />
+        -->
         <item
             android:id="@+id/nav_water_mode"
             android:title="@string/water_mode" />
         <item
             android:id="@+id/nav_edit_plot"
             android:title="@string/edit_plot" />
-        <item
-            android:id="@+id/nav_settings"
-            android:title="@string/settings" />
         <item
             android:id="@+id/nav_about"
             android:title="@string/about" />

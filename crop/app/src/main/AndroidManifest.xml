@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoadActivity"
+            android:name=".GridBoard.LoadActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
@@ -29,28 +29,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NewPlot"
+            android:name=".GridBoard.NewPlot"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".GridBoard.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
         <activity
-            android:name=".PlantNotes"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name=".AddNoteActivity"
+            android:name=".Notes.AddNoteActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".AddPlant"
+            android:name=".Plants.AddPlant"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".AddNote"
+
+            android:name=".Notes.AddNote"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".FetchPhoto"/>
+        <activity android:name=".Photos.FetchPhoto"/>
+
 
         <activity android:name=".AboutActivity"></activity>
     </application>

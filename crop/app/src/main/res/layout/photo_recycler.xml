@@ -14,7 +14,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".MainActivity"
+    tools:context=".GridBoard.MainActivity"
     android:id="@+id/LL"
     >
 

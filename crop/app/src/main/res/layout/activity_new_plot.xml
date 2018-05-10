@@ -61,15 +61,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <Button
-            android:id="@+id/button_create"
-            android:layout_width="139dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="36dp"
-            android:text="Create"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <!---end main part of screen-->
 
@@ -82,8 +73,48 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp" />
 
+        <HorizontalScrollView
+            android:id="@+id/horizontal_scroll"
+            android:layout_width="368dp"
+            android:layout_height="46dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9">
 
-        </android.support.constraint.ConstraintLayout>
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"></LinearLayout>
+
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/button_create"
+            android:layout_width="139dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:text="Create"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontal_scroll" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Starting Icon:"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+    </android.support.constraint.ConstraintLayout>
 
     <!-- Container for contents of drawer -->
     <android.support.design.widget.NavigationView
@@ -92,8 +123,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:menu="@menu/side_drawer"
-        app:headerLayout="@layout/dock_header" >
+        app:headerLayout="@layout/dock_header"
+        app:menu="@menu/side_drawer">
 
 
     </android.support.design.widget.NavigationView>

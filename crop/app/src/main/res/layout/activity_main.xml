@@ -33,7 +33,7 @@
 
             app:srcCompat="@android:drawable/ic_menu_rotate" />
 			
-        <com.example.j.crop.GameBoardView
+        <com.example.j.crop.GridBoard.GameBoardView
             android:id="@+id/boardview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
